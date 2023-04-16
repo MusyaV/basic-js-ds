@@ -24,8 +24,13 @@ class Stack {
   }
 
   peek() {
-    stack.peek();
-    return 1;
+
+    Array.prototype.peek = function () {
+      if (this.length === 0) {
+        throw new Error("out of bounds");
+      }
+      return this[this.length - 1];
+    };
   }
 }
 
